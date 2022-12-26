@@ -1,163 +1,164 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>countdown</title>
-<link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
-<style>
-body{
-margin: 0;
-padding: 0;
-background: url("https://windowscustomization.com/wp-content/uploads/2018/10/cyberpunk-night-city.gif");
-//background: url("https://www.icegif.com/wp-content/uploads/snow-icegif-29.gif");
-background-position: center;
-background-size: cover;
-}
-.timeBox{
-display: table;
-//display: none;
-margin-left: auto;
-margin-right: auto;
-margin-top: calc(50vh - 41px);
-text-align: center;
-}
-.timeBox .timeMeasure{
-float: left;
-width: 150px;
-border-radius: 10px;
-border:1px solid #333;
-overflow: hidden;
-margin: 5px 5px;
-}
+  <head>
+    <title>New Year 2023 countdown</title>
 
-.timeBox .timeMeasure .timeTitle{
-background-color: #333;
-font-family: fantasy;
-color: #fff;
-padding-top: 7px;
-padding-bottom: 7px;
-font-size: 22px;
-}
+    <!--<link rel="icon" type="images/jpg" href="icon.jpg">-->
+    <meta name="keywords" content="mitch, dj monda, mitchell, otieno, codes, kodes, wed, developer, mobile, software, engineer, alx, holberton, website, app, android, program, kenya, nairobi, East Africa" />
+    <meta name="description" content="Mitchell Otieno Monda is a software engineer with years of experience in developing web and mobile applications"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.5, user-scalable=no" />
+    <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
 
-.timeBox .timeMeasure .actualTime{
-font-family: 'Orbitron', sans-serif;
-padding-top: 7px;
-padding-bottom: 7px;
-background: #fff;
-font-size: 20px;
-}
+    <style>
+      body{
+        margin: 0;
+        padding: 0;
+        background: url("https://windowscustomization.com/wp-content/uploads/2018/10/cyberpunk-night-city.gif");
+        //background: url("https://www.icegif.com/wp-content/uploads/snow-icegif-29.gif");
+        background-position: center;
+        background-size: cover;
+      }
+      .timeBox{
+        display: table;
+        //display: none;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: calc(50vh - 41px);
+        text-align: center;
+      }
+      .timeBox .timeMeasure{
+        float: left;
+        width: 150px;
+        border-radius: 10px;
+        border:1px solid #333;
+        overflow: hidden;
+        margin: 5px 5px;
+      }
+      .timeBox .timeMeasure .timeTitle{
+        background-color: #333;
+        font-family: fantasy;
+        color: #fff;
+        padding-top: 7px;
+        padding-bottom: 7px;
+        font-size: 22px;
+      }
+      .timeBox .timeMeasure .actualTime{
+        font-family: 'Orbitron', sans-serif;
+        padding-top: 7px;
+        padding-bottom: 7px;
+        background: #fff;
+        font-size: 20px;
+      }
+      #final{
+        font-family: 'Orbitron', sans-serif;
+        color: #fff;
+        font-size: 200px;
+        position: fixed;
+        display:none;
+        width: 100%;
+        top: calc(50vh - 125px);
+        text-align:center;
+        text-shadow: -2px 2px 2px #999;
+      }
+    </style>
+  </head>
 
-#final{
-font-family: 'Orbitron', sans-serif;
-color: #fff;
-font-size: 200px;
-position: fixed;
-display:none;
-width: 100%;
-top: calc(50vh - 125px);
-text-align:center;
-text-shadow: -2px 2px 2px #999;
-}
-</style>
-</head>
+  <body id = "myBody">
+    <div class = "timeBox" id = "tmt">
 
-<body id = "myBody">
-<div class = "timeBox" id = "tmt">
+      <div class = "timeMeasure">
+        <div class = "timeTitle">
+          DAYS
+        </div>
+        <div class = "actualTime" id = "days">
+          00
+        </div>
+      </div>
 
-<div class = "timeMeasure">
-<div class = "timeTitle">
-DAYS
-</div>
-<div class = "actualTime" id = "days">
-00
-</div>
-</div>
+      <div class = "timeMeasure">
+        <div class = "timeTitle">
+          HOURS
+        </div>
+        <div class = "actualTime" id="hrs">
+          00
+        </div>
+      </div>
 
+      <div class = "timeMeasure">
+        <div class = "timeTitle">
+          MINUTES
+        </div>
+        <div class = "actualTime" id = "min">
+          00
+        </div>
+      </div>
 
-<div class = "timeMeasure">
-<div class = "timeTitle">
-HOURS
-</div>
-<div class = "actualTime" id="hrs">
-00
-</div>
-</div>
+      <div class = "timeMeasure">
+        <div class = "timeTitle">
+          SECONDS
+        </div>
+        <div class = "actualTime" id = "sec">
+          00
+        </div>
+      </div>
 
-<div class = "timeMeasure">
-<div class = "timeTitle">
-MINUTES
-</div>
-<div class = "actualTime" id = "min">
-00
-</div>
-</div>
+    </div>
 
+    <div id = "final">
+      33
+    </div>
 
-<div class = "timeMeasure">
-<div class = "timeTitle">
-SECONDS
-</div>
-<div class = "actualTime" id = "sec">
-00
-</div>
-</div>
+    <script>
+      // Set the date we're counting down to
+      var countDownDate = new Date("Dec 31, 2022 23:59:59").getTime();
 
-</div>
+      // Update the count down every 1 second
+      var x = setInterval(function() {
 
-<div id = "final">
-33
-</div>
+      // Get today's date and time
+      var now = new Date().getTime();
 
-<script>
-// Set the date we're counting down to
-var countDownDate = new Date("Dec 31, 2022 23:59:59").getTime();
+      // Find the distance between now and the count down date
+      var distance = countDownDate - now;
 
-// Update the count down every 1 second
-var x = setInterval(function() {
+      // Time calculations for days, hours, minutes and seconds
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        
+        if (seconds < 10) {
+          seconds = "0" + String(seconds);
+        }
+        if (minutes < 10) {
+          minutes = "0" + String(minutes);
+        }
+        if (hours < 10) {
+          hours = "0" + String(hours);
+        }
+        if (days < 10){
+          days = "0" + String(days);
+        }
+        // set text in specified divs
+        document.getElementById("hrs").innerHTML = hours;
+        document.getElementById("days").innerHTML = days;
+        document.getElementById("min").innerHTML = minutes;
+        document.getElementById("sec").innerHTML = seconds;
+        document.getElementById("final").innerHTML = seconds;
 
-  // Get today's date and time
-  var now = new Date().getTime();
+        // If the count down is less than 60 seconds away, activate final countdow
+        if (distance < 60100) {
+          document.getElementById("final").style.display = "block";
+          document.getElementById("tmt").style.display = "none";
+        }
 
-  // Find the distance between now and the count down date
-  var distance = countDownDate - now;
-
-  // Time calculations for days, hours, minutes and seconds
-  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-  
-  if (seconds < 10){
-seconds = "0" + String(seconds);
-}
-if (minutes < 10){
-minutes = "0" + String(minutes);
-}
-if (hours < 10){
-hours = "0" + String(hours);
-}
-if (days < 10){
-days = "0" + String(days);
-}
-
-  // Display the result in the element with id="demo"
-  document.getElementById("hrs").innerHTML = hours;
-document.getElementById("days").innerHTML = days;
-document.getElementById("min").innerHTML = minutes;
-document.getElementById("sec").innerHTML = seconds;
-document.getElementById("final").innerHTML = seconds;
-
-  // If the count down is finished, write some text
- if (distance < 60100) {
-    document.getElementById("final").style.display = "block";
-    document.getElementById("tmt").style.display = "none";
-  }
-
-  if (distance < 100) {
-    clearInterval(x);
-    document.getElementById("final").style.top = "10px";
-    document.getElementById("final").innerHTML = "HAPPY NEW YEAR";
-  }
-}, 1000);
-</script>
-</body>
+        // If the count down hits zero, display happy new year message
+        if (distance < 100) {
+          clearInterval(x);
+          document.getElementById("final").style.top = "10px";
+          document.getElementById("final").innerHTML = "HAPPY NEW YEAR";
+        }
+      }, 1000);
+    </script>
+  </body>
 </html>
