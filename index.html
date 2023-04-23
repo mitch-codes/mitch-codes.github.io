@@ -192,6 +192,10 @@ padding:20px;
   //background:#fff;
   margin:10px auto;
 }
+#formsection{
+	width:50%;
+	float:left;
+	}
 #contact .contactBox input{
   float:left;
   margin:5px;
@@ -360,9 +364,14 @@ padding-bottom:40px;
 <div id="contact">
   <div class="contactBox">
 <form method = "POST" action="">
-    <input id="myname" type="text" placeholder="name" name="name">
+	
+     <div id = "formsection">
+     <input id="myname" type="text" placeholder="name" name="name">
+     <input id="mynumber" class="tell" type="text" placeholder="phone number" name="tel">
+	</div>
+	
+     <div id = "formsection">
     <input id="myemail" type="text" placeholder="email address" name="email">
-    <input id="mynumber" class="tell" type="text" placeholder="phone number" name="tel">
 
       <select id="myreason" name="reason">
         <option value="collaboration">Let's collaborate</option>
@@ -370,6 +379,7 @@ padding-bottom:40px;
         <option value="website">I need a website</option>
       </select>
     <textarea id="mymessage" name="message" rows="4" placeholder="your request"></textarea>
+	</div>
     <a class="sub" onclick="myFunction()"/>Send</a>
 </form>
   </div>
