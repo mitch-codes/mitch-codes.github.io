@@ -1,0 +1,422 @@
+
+<html>
+<head>
+<link rel="icon" type="image/png" href="images/logo.png">
+
+<title>Mitch Codes</title>
+
+
+<meta name="keywords" content="mitch monda, mitch otieno, mitchell, mitch codes, web developer, kenya, nairobi, mitch, otieno, monda, software engineer" />
+	<meta name="description" content="Mitch Otieno is a software engineer based in Nairobi with a passion for building and creating"/>
+	 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.5, user-scalable=no" />
+
+<style>
+
+/* Demo by http://creative-punch.net */
+@import "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+//@import "https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css";
+
+html {
+scroll-behavior: smooth;
+}
+body {
+font-family:sans-serif;
+margin:0;
+padding:0;
+background: url(images/bg1.gif);
+//background-repeat: no-repeat;
+background-attachment: fixed;
+}
+#home {
+  padding-bottom:100px;  
+  min-height:calc(100vh - 100px);
+  width:100%;
+  text-align:center;
+}
+
+#home img{
+  margin-top:300px;  
+  width:30em;
+}
+
+
+
+.circular-menu {
+  width: 250px;
+  height: 250px;
+  left:calc(50% - 125px);
+  z-index:2;
+  //position: relative;
+  position:fixed;
+}
+
+.circle {
+  width: 250px;
+  height: 250px;
+  opacity: 0;
+  
+  -webkit-transform: scale(0);
+  -moz-transform: scale(0);
+  transform: scale(0);
+
+  -webkit-transition: all 0.4s ease-out;
+  -moz-transition: all 0.4s ease-out;
+  transition: all 0.4s ease-out;
+}
+
+.open.circle {
+  opacity: 1;
+
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  transform: scale(1);
+}
+
+.circle a {
+  text-decoration: none;
+  color: white;
+  display: block;
+  height: 40px;
+  width: 40px;
+  line-height: 40px;
+  margin-left: -20px;
+  margin-top: -20px;
+  position: absolute;
+  text-align: center;
+
+}
+
+.circle a:hover {
+  color: #eef;
+}
+
+.menu-button {
+  position: absolute;
+  top: calc(50% - 30px);
+  left: calc(50% - 30px);
+  text-decoration: none;
+  text-align: center;
+  color: #444;
+  border-radius: 50%;
+  display: block;
+  height: 40px;
+  width: 40px;
+  line-height: 40px;
+  padding: 10px;
+  background: #dde;
+}
+
+.menu-button:hover {
+  background-color: #eef;
+}
+
+/* Author stuff */
+h1.author {
+  padding-top:300px;
+  text-align:center;
+  color: white;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: 300;
+}
+
+h1.author a {
+  color: #348;
+  text-decoration:none;
+}
+
+h1.author a:hover {
+  color: #ddd;
+} 
+
+#about {  
+  background: url(images/bg2.gif);
+  background-size:cover;
+  width:100%;
+  min-height:100vh;
+  //text-align:center;
+  display:table;
+  text-align:center;
+  //padding-top:250px;
+}
+
+#about .backdrop{
+padding-top:260px;
+padding-bottom:10px;
+min-height:calc(100vh - 250px);
+background:rgba(0, 0, 0, 0.6);
+
+}
+
+.aboutme{
+  margin:0px auto;
+  //min-height:calc(100vh - 270px);
+  width:90%;
+  border-radius:5px;
+  //background:linear-gradient(135deg,#51087E 95%, transparent 5%);
+  background:linear-gradient(135deg,#222 95%, transparent 5%);
+  background-opacity:0.7;
+  display:table;
+}
+
+
+
+.aboutme img{
+  margin:10px;
+  width:150px;
+  float:left;
+  opacity:1.0;
+}
+.aboutme .about-desc{
+float:left;
+opacity:1.0;
+margin:10px;
+width:calc(100% - 190px);
+min-height:100px;
+background:linear-gradient(135deg,#dde 95%, transparent 5%);
+}
+.aboutme .about-desc .about-text{
+padding:20px;
+}
+
+#contact {
+  padding-top:250px;
+  min-height: calc(100vh - 250px);
+  width:100%;
+  background:rgba(0, 0, 0, 0.5);
+}
+
+#contact .contactBox {
+  width:90%;
+  min-height:100px;
+  display:table;
+  //background:#fff;
+  margin:10px auto;
+}
+#contact .contactBox input{
+  float:left;
+  margin:5px;
+  width:calc(50% - 10px);
+  border:none;
+  background:linear-gradient(135deg,#fff 99%, transparent 1%);
+  font-size:17px;
+  
+}
+
+#contact .contactBox .sub {
+   text-decoration:none;
+   display:table;
+   font-size:17px;
+   text-align:center;
+   margin:15px auto;
+   //margin-left:calc(25% - 10px);
+   padding:5px 0;
+   width:calc(50% - 10px);
+   //background:linear-gradient(135deg,#fff 99%, transparent 1%);
+   background:linear-gradient(135deg,#bd00ff 99%, transparent 1%);
+   color:#fff;
+}
+
+#contact .contactBox .sub:hover {
+   cursor:pointer;
+   background:linear-gradient(135deg,#fff 99%, transparent 1%);
+   color:#111;
+}
+
+#contact .contactBox select{
+  float:left;
+  margin:5px;
+  width:calc(50% - 10px);
+  border:none;
+  background:linear-gradient(135deg,#fff 99%, transparent 1%);
+  font-size:17px;
+}
+
+#contact .contactBox textarea{
+  float:left;
+  margin:5px;
+  width:calc(100% - 10px);
+  border:none;
+  background:linear-gradient(135deg,#fff 99%, transparent 1%);
+  font-size:17px;
+}
+
+
+#socials {  
+  background: url(images/bg3.gif);
+  background-size:cover;
+  background-position:center;
+  width:100%;
+  min-height:100vh;
+  //text-align:center;
+  display:table;
+  text-align:center;
+  //padding-top:250px;
+}
+
+#socials .backdrop{
+padding-top:280px;
+padding-bottom:10px;
+min-height:calc(100vh - 250px);
+background:rgba(0, 0, 0, 0.6);
+text-align:center;
+display:table;
+width:100%;
+}
+
+
+
+#socials .logs{  
+  color:#fff;
+  padding:40px 0px;
+  width:90px;
+  display:table;
+  float:left;
+  //display:table;
+  //float:left;
+  margin:10px calc(12.5% - 45px);
+  font-size:30px;
+  background:linear-gradient(135deg,#111 90%, transparent 10%);
+}
+
+#socials2 {
+display:table;
+width:100%;
+padding-top:40px;
+padding-bottom:40px;
+}
+
+#socials2 a{  
+  color:#fff;
+  padding:15px 20px;
+  //display:table;
+  //float:left;
+  font-size:24px;
+  text-decoration:none;
+  background:linear-gradient(135deg,#111 90%, transparent 10%);
+}
+
+@media screen and (max-width:600px){
+    #socials .logs{
+		margin:10px calc(25% - 45px);
+	}
+    #home img{ 
+            width:90%;
+      }
+}
+
+
+
+</style>
+</head>
+<body>
+
+<div id="home">
+<nav class="circular-menu">
+
+  <div class="circle">
+    <a href="#home" class="fa fa-home fa-2x"></a>
+    <a href="#about" class="fa fa-user fa-2x"></a>
+    <a href="#contact" class="fa fa-comments-o fa-2x"></a>
+    <a href="#socials" class="fa fa-at fa-2x"></a>
+    <a href="https://www.linkedin.com/in/mitchmonda/" target="_blank" class="fa fa-linkedin fa-2x"></a>
+    <a href="https://github.com/mitch-codes" target="_blank" class="fa fa-github fa-2x"></a>
+    <a href="#" class="fa fa-behance fa-2x"></a>
+    <!--<a href="" class="fa fa-asterisk fa-2x"></a>-->
+  </div>
+  
+  <a href="" class="menu-button fa fa-bars fa-2x"></a>
+
+</nav>
+
+<a href=""><img src="images/logo1.png"></a>
+
+</div>
+
+<div id="about">
+ <div class="backdrop">
+  <div class="aboutme">
+    <img src="images/profile.jpg" alt="logo">
+    <div class="about-desc">
+      <h3>Mitch Otieno Monda</h3>
+      <div class="about-text">
+        Hi there, I'm Mitch Otieno Monda a.k.a mitch_codes, I'm a quality-oriented individual with a passion for technology and creating new things. 
+        I am well versed in software development and have taken strides to improve on my knowledge 
+        and expertise over the years. I am also well versed in various programming languages including, 
+        Python, JAVA, PHP, HTML and MYSQL. 
+        I believe myself to be a critical thinker, problem solving and quality oriented individual.
+       </div>
+    </div>
+  </div>
+ </div>
+</div>
+
+<div id="contact">
+  <div class="contactBox">
+<form method = "POST" action="">
+    <input id="myname" type="text" placeholder="name" name="name">
+    <input id="myemail" type="text" placeholder="email address" name="email">
+    <input id="mynumber" class="tell" type="text" placeholder="phone number" name="tel">
+
+      <select id="myreason" name="reason">
+        <option value="collaboration">Let's collaborate</option>
+        <option value="app">I need an app</option>
+        <option value="website">I need a website</option>
+      </select>
+    <textarea id="mymessage" name="message" rows="4" placeholder="your request"></textarea>
+    <a class="sub" onclick="myFunction()"/>Send</a>
+</form>
+  </div>
+</div>
+
+
+<div id="socials">
+ <div class="backdrop">
+   
+      <a class="logs" href="https://web.facebook.com/mitchscodes/" target="_blank"><i class="fa fa-facebook"></i></a>
+      <a class="logs" href="https://instagram.com/mitch_codes" target="_blank"><i class="fa fa-instagram"></i></a>
+      <a class="logs" href="https://twitter.com/mitch_codes" target="_blank"><i class="fa fa-twitter"></i></a>
+      <a class="logs" href="https://github.com/mitch-codes" target="_blank"><i class="fa fa-github"></i></a>
+</br>
+
+<div id="socials2">
+<a href="tel:+254792549422"><i class="fa fa-phone"></i>&nbsp;&nbsp;0792 549 422</a>
+</div>
+    
+
+ </div>
+</div>
+
+<script>
+
+// Demo by http://creative-punch.net
+
+var items = document.querySelectorAll('.circle a');
+
+for(var i = 0, l = items.length; i < l; i++) {
+  items[i].style.left = (50 - 35*Math.cos(-0.5 * Math.PI - 2*(1/l)*i*Math.PI)).toFixed(4) + "%";
+  
+  items[i].style.top = (50 + 35*Math.sin(-0.5 * Math.PI - 2*(1/l)*i*Math.PI)).toFixed(4) + "%";
+}
+
+document.querySelector('.menu-button').onclick = function(e) {
+   e.preventDefault(); document.querySelector('.circle').classList.toggle('open');
+}
+
+</script>
+
+<script>
+function myFunction() {
+  let st = "name: " + document.getElementById("myname").value +"%0aEmail: "+ document.getElementById("myemail").value +"%0aPhone: "+ document.getElementById("mynumber").value +"%0awants: "+ document.getElementById("myreason").value +"%0aInstructions: "+ document.getElementById("mymessage").value;
+  //let url = "https://www."+st+".com";
+  let url = "https://api.callmebot.com/whatsapp.php?phone=254779344805&text=" + st +"&apikey=4894473";
+  window.fetch(url);
+  //window.open(url);
+  window.alert("Your message has been sent, I will get back to you as soon as possible");
+
+}
+</script>
+
+
+
+</body>
+</html>
