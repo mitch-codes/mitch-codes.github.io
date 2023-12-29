@@ -1,3 +1,3 @@
 # mitch-codes.github.io
 
-A simple website hosted on github
+portflio project hosted on github with all there is to know about me
