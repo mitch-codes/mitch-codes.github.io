@@ -1,0 +1,200 @@
+<html>
+<head>
+
+<link rel="icon" type="image/png" href="images/logo.png">
+
+<title>New Year 2024</title>
+
+
+<meta name="keywords" content="mitch monda, mitch otieno, mitchell, mitch codes, web developer, kenya, nairobi, mitch, otieno, monda, software engineer" />
+	<meta name="description" content="Mitch Otieno is a software engineer based in Nairobi with a passion for building and creating"/>
+	 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.5, user-scalable=no" />
+	
+	 <meta property="og:title" content="Mitch Codes" />
+     <meta property="og:type" content="website" />
+     <meta property="og:description" content="Mitch Otieno is a software engineer based in Nairobi with a passion for building and creating" />
+     <meta property="og:url" content="https://mitch-codes.github.io/" />
+     <meta property="og:image" content="images/profile.jpg" />
+
+<style>
+body {
+font-family:sans-serif;
+background: url(images/star.jpg);
+background-position:center;
+background-size:cover;
+margin: 0;
+padding: 0;
+//color:#fff;
+}
+
+.timebox{
+width:90%;
+margin: 30vh auto;
+//min-height:100px;
+background: #fff;
+border-radius: 10px;
+overflow:hidden;
+}
+.timesection {
+float:left;
+width: 25%;
+text-align:center;
+}
+
+.timetitle{
+padding: 10px 0 10px 0;
+background: #111;
+//background: rgba(0, 0, 0, 0.5);
+color: #fff;
+font-size:20px;
+}
+
+.timetime{
+padding: 15px 0 15px 0;
+background: #ddd;
+color: #111;
+font-size:20px;
+}
+#remain {
+display: none;
+box-sizing: border-box;
+text-align:center;
+width: 90%;
+padding: 10px;
+margin: 10px auto;
+color: #fff;
+//font-size: calc(100vh - 200px);
+font-size: 70vh;
+}
+#newVid {
+display: none;
+z-index: 3;
+width: 100%;
+height: 100vh;
+background: rgba(0, 0, 0, 1);
+}
+#newVid video{
+width: 100%;
+height: 100%;
+}
+
+@media screen and (max-width:600px){
+    .timesection {
+       width: 50%;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="timebox" id="timeboxes">
+
+<div class="timesection">
+<div class="timetitle">
+DAYS
+</div>
+<div class="timetime" id="day">
+00
+</div>
+</div>
+
+<div class="timesection">
+<div class="timetitle">
+HOURS
+</div>
+<div class="timetime" id="hour">
+00
+</div>
+</div>
+
+<div class="timesection">
+<div class="timetitle">
+MIN
+</div>
+<div class="timetime" id="min">
+00
+</div>
+</div>
+
+
+<div class="timesection">
+<div class="timetitle">
+SEC
+</div>
+<div class="timetime" id="sec">
+00
+</div>
+</div>
+
+</div>
+
+<div id="remain">
+60
+</div>
+
+<div id="newVid">
+<video autoplay muted loop>
+        <source src="images/newYear.mp4" type="video/mp4" />
+    </video>
+</div>
+
+
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("Dec 29, 2023 13:52:00").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  if (hours < 10) {
+      hours = "0" + String(hours);
+  }
+
+  if (days < 10) {
+      days = "0" + String(days);
+  }
+
+if (minutes < 10) {
+      minutes = "0" + String(minutes);
+  }
+
+  if (seconds < 10) {
+      seconds = "0" + String(seconds);
+  }
+
+  // Display the result in the element with id="demo"
+  document.getElementById("day").innerHTML = days;
+  document.getElementById("hour").innerHTML = hours;
+  document.getElementById("min").innerHTML = minutes;
+  document.getElementById("sec").innerHTML = seconds;
+  document.getElementById("remain").innerHTML = seconds;
+
+  // If the count down is finished, make changes to css
+  if (distance < 60000) {
+   document.getElementById("remain").style.display="block";
+   document.getElementById("timeboxes").style.display="none";
+}
+
+  if (distance < 1) {
+   document.getElementById("newVid").style.display="block";
+   document.getElementById("remain").style.display="none";
+   //document.getElementById("timeboxes").style.display="none";
+}
+  
+}, 1000);
+</script>
+</body>
+
+</html>
