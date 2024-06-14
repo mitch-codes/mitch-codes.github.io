@@ -192,66 +192,112 @@ padding:20px;
   background:rgba(0, 0, 0, 0.5);
 }
 
-#contact .contactBox {
-  width:90%;
-  min-height:100px;
-  display:table;
-  //background:#fff;
-  margin:10px auto;
-}
-#formsection{
-	width:50%;
-	float:left;
-	}
-#contact .contactBox input{
-  float:left;
-  margin:5px;
-  width:calc(100% - 10px);
-  border:none;
-  background:linear-gradient(135deg,#fff 99%, transparent 1%);
-  font-size:17px;
-  
-}
-
-#contact .contactBox .sub {
-   text-decoration:none;
-   display:table;
-   font-size:17px;
-   text-align:center;
-   margin:15px auto;
-   //margin-left:calc(25% - 10px);
-   padding:5px 0;
-   width:calc(50% - 10px);
-   //background:linear-gradient(135deg,#fff 99%, transparent 1%);
-   background:linear-gradient(135deg,#bd00ff 99%, transparent 1%);
-   color:#fff;
-}
-
-#contact .contactBox .sub:hover {
-   cursor:pointer;
-   background:linear-gradient(135deg,#fff 99%, transparent 1%);
-   color:#111;
-}
-
-#contact .contactBox select{
-  float:left;
-  margin:5px;
-  width:calc(100% - 10px);
-  border:none;
-  background:linear-gradient(135deg,#fff 99%, transparent 1%);
-  font-size:17px;
-}
-
-#contact .contactBox textarea{
-  float:left;
-  margin:5px;
-  width:calc(100% - 10px);
-  border:none;
-  background:linear-gradient(135deg,#fff 99%, transparent 1%);
-  font-size:17px;
+.mySlides {
+  width: 100%;
+  height: 100%;
 }
 
 
+/* Slideshow container */
+.slideshow-container {
+  box-sizing: border-box;
+  width: 100%;
+  height: calc(100vh - 17px);
+  position: relative;
+  //margin: auto;
+  overflow:hidden;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  //width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  background: #09143C;
+  border-radius: 5px;
+  z-index: 2;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  opacity: 0.8;
+  //background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 0px;
+  width: calc(100% - 24px);
+  text-align: justify;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.text a{
+  color: #fff;
+  //height: 50px;
+  padding: 5px;
+  margin-top: 10px;
+  display: table;
+  background: #008080;
+  text-decoration: none;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: calc(25% - 2px);
+  //margin: 0px;
+  background-color: #008080;
+  border: 1px solid #fff;
+  //border-radius: 50%;
+  display: block;
+  float: left;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #00C5C5;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
 #socials {  
   background: url(images/bg3.gif);
   background-size:cover;
@@ -369,27 +415,42 @@ padding-bottom:40px;
 </div>
 
 <div id="contact">
-  <div class="contactBox">
-<form method = "POST" action="">
-	
-     <div id = "formsection">
-     <input id="myname" type="text" placeholder="name" name="name">
-     <input id="mynumber" class="tell" type="text" placeholder="phone number" name="tel">
-	</div>
-	
-     <div id = "formsection">
-    <input id="myemail" type="text" placeholder="email address" name="email">
 
-      <select id="myreason" name="reason">
-        <option value="collaboration">Let's collaborate</option>
-        <option value="quests">seek clarification</option>
-      </select>
-    </div>
-	
-    <textarea id="mymessage" name="message" rows="4" placeholder="your request"></textarea>
-    <a class="sub" onclick="myFunction()"/>Send</a>
-</form>
-  </div>
+<div class="slideshow-container">
+
+<div class="mySlides fade" style="background: url(https://images2.alphacoders.com/709/709942.jpg); background-size: cover; background-position:center;">
+  <div class="numbertext">1 / 4</div>
+
+  <div class="text">Get to know me, my likes, dislikes, skills and expertise <a href="#">mitch codes</a></div>
+</div>
+
+<div class="mySlides fade" style="background: url(https://images.pexels.com/photos/4009402/pexels-photo-4009402.jpeg); background-size: cover; background-position:center;">
+  <div class="numbertext">2 / 4</div>
+  <div class="text">A movie search engine that lets you get information on all the latest movies and series plus honest reviews on select movies and series <a href="#">mondart movies</a></div>
+</div>
+
+<div class="mySlides fade" style="background: url(https://images.pexels.com/photos/4273243/pexels-photo-4273243.jpeg); background-size: cover; background-position:center;">
+  <div class="numbertext">3 / 4</div>
+  <div class="text">A weather app that gives you hourly information on weather conditions based on your location <a href="#">sisi weather</a></div>
+</div>
+
+<div class="mySlides fade" style="background: url(https://images.pexels.com/photos/3028127/pexels-photo-3028127.jpeg); background-size: cover; background-position:center;">
+  <div class="numbertext">4 / 4</div>
+  <div class="text">A food delivery service <a href="#">sisi food</a></div>
+</div>
+
+<a class="prev" onclick="plusSlides(-1)">❮</a>
+<a class="next" onclick="plusSlides(1)">❯</a>
+
+</div>
+
+<div>
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span>
+  <span class="dot" onclick="currentSlide(4)"></span> 
+</div>
+
 </div>
 
 
@@ -429,14 +490,31 @@ document.querySelector('.menu-button').onclick = function(e) {
 </script>
 
 <script>
-function myFunction() {
-  let st = "name: " + document.getElementById("myname").value +"%0aEmail: "+ document.getElementById("myemail").value +"%0aPhone: "+ document.getElementById("mynumber").value +"%0awants: "+ document.getElementById("myreason").value +"%0aInstructions: "+ document.getElementById("mymessage").value;
-  //let url = "https://www."+st+".com";
-  let url = "https://api.callmebot.com/whatsapp.php?phone=254779344805&text=" + st +"&apikey=4894473";
-  window.fetch(url);
-  //window.open(url);
-  window.alert("Your message has been sent, I will get back to you as soon as possible");
+let slideIndex = 1;
+showSlides(slideIndex);
 
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
 }
 </script>
 
