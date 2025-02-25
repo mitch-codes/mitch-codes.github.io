@@ -355,14 +355,53 @@ padding-bottom:40px;
   text-decoration:none;
   background:linear-gradient(135deg,#111 90%, transparent 10%);
 }
-#vids {
-  width:100%;
-  min-height:100vh;
-  //text-align:center;
-  display:table;
-  text-align:center;
-  //padding-top:250px;
-}
+
+            .mediumBlog {
+                width: 100%;
+                min-height: 100vh;
+                align-items: center;
+            }
+            .mediumBlog h3{
+                display:table;
+                margin: 10px auto;
+            }
+            .mediumBlog a {
+                text-decoration: none;
+            }
+            .mediumBlog .actualBlog {
+                float: left;
+                margin: 10px;
+                width: calc(33% - 20px);
+                height: 200px;
+                border-radius: 7px;
+                position: relative;
+                overflow: hidden;
+                transition: .2s;
+            }
+            .mediumBlog .actualBlog:hover {
+                cursor: pointer;
+                opacity: 0.8;
+            }
+            .mediumBlog .actualBlog .blogText {
+                position: absolute;
+                bottom: 0;
+                text-align: justify;
+                color: #fff;
+                font-size: 18px;
+                padding: 5px;
+                background: rgba(0, 0, 0, 0.7);
+                min-width: calc(100% - 10px);
+            }
+            @media screen and (max-width: 925px) {
+                .mediumBlog .actualBlog {
+                    width: calc(50% - 20px);
+                }
+            }
+            @media screen and (max-width: 671px) {
+                .mediumBlog .actualBlog {
+                    width: calc(100% - 20px);
+                }
+            }
 
 @media screen and (max-width:600px){
     #socials .logs{
@@ -496,16 +535,41 @@ padding-bottom:40px;
 </div>
 
 
-<div id="vids">
-    <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
-  <iframe src="https://www.youtube.com/embed/NzRJAdJZBkw?si=yOZx6fY33V15GP-7"
-    style="width:calc(100% - 20px); height:calc(100% - 20px); position:absolute; left:0px; top:0px; overflow:hidden; border:none; border-radius:5px; margin:10px;"
-    allowfullscreen
-    title="Dailymotion Video Player"
-    allow="web-share">
-  </iframe>
-   </div>
-</div>
+        <div class="mediumBlog">
+            <h3>Latest Blogs</h3>
+            <a href="#">
+                <div class="actualBlog" style="background:url(https://miro.medium.com/v2/resize:fit:720/format:webp/1*6TNQJJv8c8Z9m-lH4c8IVQ.jpeg); background-size: cover; background-position: center">
+                    <div class="blogText">
+                        tHIS IS A DUMMY TEXT
+                    </div>
+                </div>
+            </a>
+
+            <a href="#">
+                <div class="actualBlog" style="background:url(https://miro.medium.com/v2/resize:fit:720/format:webp/1*6TNQJJv8c8Z9m-lH4c8IVQ.jpeg); background-size: cover; background-position: center">
+                    <div class="blogText">
+                        tHIS IS A DUMMY TEXT
+                    </div>
+                </div>
+            </a>
+
+            <a href="#">
+                <div class="actualBlog" style="background:url(https://miro.medium.com/v2/resize:fit:720/format:webp/1*6TNQJJv8c8Z9m-lH4c8IVQ.jpeg); background-size: cover; background-position: center">
+                    <div class="blogText">
+                        tHIS IS A DUMMY TEXT
+                    </div>
+                </div>
+            </a>
+
+            <a href="#">
+                <div class="actualBlog" style="background:url(https://miro.medium.com/v2/resize:fit:720/format:webp/1*6TNQJJv8c8Z9m-lH4c8IVQ.jpeg); background-size: cover; background-position: center">
+                    <div class="blogText">
+                        tHIS IS A DUMMY TEXT
+                    </div>
+                </div>
+            </a>
+
+            </div>
 
 <script>
 
