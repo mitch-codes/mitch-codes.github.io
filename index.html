@@ -151,7 +151,7 @@ h1.author a:hover {
 padding-top:260px;
 padding-bottom:10px;
 min-height:calc(100vh - 250px);
-background:rgba(0, 0, 0, 0.6);
+background:rgba(0, 147, 200, 0.3);
 
 }
 
@@ -213,7 +213,7 @@ padding:20px;
 .prev, .next {
   cursor: pointer;
   position: absolute;
-  top: 50%;
+  top: calc(50% - 16px);
   //width: auto;
   padding: 16px;
   margin-top: -22px;
@@ -223,9 +223,12 @@ padding:20px;
   transition: 0.6s ease;
   border-radius: 0 3px 3px 0;
   user-select: none;
-  background: #822FFF;
+  background: #0093C8;
   border-radius: 5px;
   z-index: 2;
+}
+.prev:hover, .next:hover {
+  background: #00B4BD;
 }
 
 /* Position the "next button" to the right */
@@ -241,27 +244,43 @@ padding:20px;
 }
 
 /* Caption text */
+.textHolder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.2);
+}
 .text {
   text-align: center;
   color: #f2f2f2;
-  font-size: 15px;
-  padding: 8px 12px 40px 8px;
-  position: absolute;
-  bottom: 0px;
-  width: calc(100% - 24px);
+  font-size: 20px;
+  display: table;
+  max-width: calc(100% - 110px);
   text-align: justify;
-  background: rgba(0, 0, 0, 0.7);
+  text-shadow: 2px 2px #111;
 }
-
+.text img{
+  margin: 10px auto;
+  display: table;
+  height: 4rem;
+}
 .text a{
   color: #fff;
   //height: 50px;
   padding: 10px 15px;
-  margin-top: 10px;
+  margin: 10px auto;
   display: table;
   //background: #008080;
-  background: #822FFF;
+  background: #0093C8;
   text-decoration: none;
+  text-shadow: none;
+  box-shadow: 2px 2px #111;
+}
+
+.text a:hover{
+  background: #00B4BD;
 }
 
 /* Number text (1/3 etc) */
@@ -280,7 +299,7 @@ padding:20px;
   width: calc(20% - 2px);
   //margin: 0px;
   //background-color: #008080;
-  background-color: #822FFF;
+  background-color: #0093C8;
   border: 1px solid #fff;
   //border-radius: 50%;
   display: block;
@@ -318,7 +337,7 @@ padding:20px;
 padding-top:280px;
 padding-bottom:10px;
 min-height:calc(100vh - 250px);
-background:rgba(0, 0, 0, 0.6);
+background:rgba(0, 147, 200, 0.3);
 text-align:center;
 display:table;
 width:100%;
@@ -391,7 +410,7 @@ padding-bottom:40px;
                 color: #fff;
                 font-size: 18px;
                 padding: 5px;
-                background: rgba(0, 0, 0, 0.7);
+                background: rgba(0, 147, 200, 0.9);
                 min-width: calc(100% - 10px);
             }
             @media screen and (max-width: 925px) {
@@ -472,30 +491,50 @@ padding-bottom:40px;
 
 <div class="slideshow-container">
 
-<div class="mySlides fade" style="background: url(https://images.pexels.com/photos/5699431/pexels-photo-5699431.jpeg); background-size: cover; background-position:center;">
-  <div class="numbertext">1 / 5</div>
-
-  <div class="text">Counseling site linking experienced caounselors to patients in need of support <a href="https://www.blackcounselinguk.com/">Online Counseling</a></div>
+<div class="mySlides fade" style="background: url(images/bck1.jpeg); background-size: cover; background-position:center;">
+  
+  <div class="textHolder">
+    <div class="text">
+      <img src="images/counsel.png">
+      Counseling site linking experienced counselors to patients in need of support 
+      <a href="https://www.blackcounselinguk.com/">View Online Counseling</a></div>
+  </div>
 </div>
 
-<div class="mySlides fade" style="background: url(https://images.pexels.com/photos/4009402/pexels-photo-4009402.jpeg); background-size: cover; background-position:center;">
-  <div class="numbertext">2 / 5</div>
-  <div class="text">A movie search engine that lets you get information on all the latest movies and series plus honest reviews on select movies and series <a href="https://www.mondartmovies.xyz/" target="_blank">mondart movies</a></div>
+<div class="mySlides fade" style="background: url(images/bck2.jpeg); background-size: cover; background-position:center;">
+  <div class="textHolder">
+  <div class="text">
+    <img src="images/movlogo.jpg">
+    A movie search engine that lets you get information on all the latest movies and series plus honest reviews on select movies and series 
+    <a href="https://www.mondartmovies.xyz/" target="_blank">View Mondart Movies</a></div>
+    </div>
 </div>
 
 <div class="mySlides fade" style="background: url(images/fan3.jpg); background-size: cover; background-position:center;">
-  <div class="numbertext">3 / 5</div>
-  <div class="text">Get up to date information on different fottball leagues from across the globe <a href="football.html">Mondart Football</a></div>
+  <div class="textHolder">
+  <div class="text">
+    <img src="images/ftlogo.png">
+    Get up to date information on different football leagues from across the globe 
+    <a href="football.html">View Mondart Football</a></div>
+    </div>
 </div>
 
-<div class="mySlides fade" style="background: url(https://static.wikia.nocookie.net/lostpedia/images/f/fa/Counter_108.jpg); background-size: cover; background-position:center;">
-  <div class="numbertext">4 / 5</div>
-  <div class="text">A simple app that simulates "the button" as seen on the popular show 'LOST' <a href="lost.html">lOST button</a></div>
+<div class="mySlides fade" style="background: url(images/bck3.jpg); background-size: cover; background-position:center;">
+  <div class="textHolder">
+  <div class="text">
+    <img src="images/logo.png">
+    A simple app that simulates "the button" as seen on the popular show 'LOST' 
+    <a href="lost.html">Use lOST button</a></div>
+    </div>
 </div>
 
-<div class="mySlides fade" style="background: url(https://images.pexels.com/photos/4273243/pexels-photo-4273243.jpeg); background-size: cover; background-position:center;">
-  <div class="numbertext">5 / 5</div>
-  <div class="text">A weather app that gives you hourly information on weather conditions based on your location <a href="#">sisi weather</a></div>
+<div class="mySlides fade" style="background: url(images/bck4.jpeg); background-size: cover; background-position:center;">
+  <div class="textHolder">
+  <div class="text">
+    <img src="images/logo.png">
+    A weather app that gives you hourly information on weather conditions based on your location 
+    <a href="#">View Sisi Weather</a></div>
+    </div>
 </div>
 
 <!--<div class="mySlides fade" style="background: url(https://images.pexels.com/photos/3028127/pexels-photo-3028127.jpeg); background-size: cover; background-position:center;">
