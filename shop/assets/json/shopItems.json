@@ -1,0 +1,37 @@
+[{
+     "itemId": "AA",
+     "itemName": "pancake",
+     "itemDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temp incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse. Donec condimentum elementum convallis. Nunc sed orci a diam ultrices aliquet interdum quis nulla.",
+     "img": "../img/shop_06.jpg",
+     "itemColors": ["black", "red", "green"],
+     "itemSizes": ["S", "M", "L", "XL"],
+     "cost": 220
+  },
+  {
+   "itemId": "AA",
+   "itemName": "pancake",
+   "itemDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temp incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse. Donec condimentum elementum convallis. Nunc sed orci a diam ultrices aliquet interdum quis nulla.",
+   "img": "../img/shop_06.jpg",
+   "itemColors": ["black", "red", "green"],
+   "itemSizes": ["S", "M", "L", "XL"],
+   "cost": 220
+},
+{
+   "itemId": "AA",
+   "itemName": "pancake",
+   "itemDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temp incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse. Donec condimentum elementum convallis. Nunc sed orci a diam ultrices aliquet interdum quis nulla.",
+   "img": "../img/shop_06.jpg",
+   "itemColors": ["black", "red", "green"],
+   "itemSizes": ["S", "M", "L", "XL"],
+   "cost": 220
+},
+{
+   "itemId": "AA",
+   "itemName": "pancake",
+   "itemDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temp incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse. Donec condimentum elementum convallis. Nunc sed orci a diam ultrices aliquet interdum quis nulla.",
+   "img": "../img/shop_06.jpg",
+   "itemColors": ["black", "red", "green"],
+   "itemSizes": ["S", "M", "L", "XL"],
+   "cost": 220
+}
+]

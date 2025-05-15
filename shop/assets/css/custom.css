@@ -1,0 +1,172 @@
+/*
+Custom Css
+*/
+.cartItemBox {
+    padding-bottom: 50px;
+}
+.cartItem {
+    width: 96%;
+    min-height: 30px;
+    //background: #ddd;
+    margin: 10px auto;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    display: table;
+    //overflow: hidden;
+    position: relative;
+}
+
+.cartItem a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 3px;
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: #56ae6c;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    text-align: center;
+    transition: .2s;
+}
+.cartItem a:hover{
+    background: #ff0f0f;
+}
+    
+.cartItem .imgHead{
+    float: left;
+    width: 50px;
+    height: 50px;
+    background: #fff;
+}
+    
+    
+.cartItem img{
+    float: left;
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+}
+    
+.cartItem .cartItemName{
+    float: left;
+    width: calc(100% - 200px);
+    text-align: center;
+    font-size: 20px;
+    padding-top: 15px;
+    padding-bottom: 13px;
+    background: #fff;
+}
+.cartItem .cartItemQuantity{
+    float: left;
+    width: 50px;
+    text-align: center;
+    font-size: 20px;
+    padding-top: 15px;
+    padding-bottom: 13px;
+    //background: red;
+}
+.cartItem .cartItemCost{
+    float: left;
+    width: 100px;
+    text-align: center;
+    font-size: 20px;
+    padding-top: 15px;
+    padding-bottom: 13px;
+    //background: red;
+    //border: 1px solid #fff;
+}
+
+#mpesadets {
+    display:none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px !important;
+    font-weight: 300 !important;
+}
+#mpesadets .clientHead {
+    margin-bottom: 7px;
+}
+#mpesadets input {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 5px;
+    border: 1px solid green;
+    border-radius: 5px;
+}
+
+#mpesadets textarea {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 5px;
+    border: 1px solid green;
+    border-radius: 5px;
+}
+
+#mpesadets button {
+    width: 100%;
+}
+
+#coddets {
+    display:none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px !important;
+    font-weight: 300 !important;
+}
+#coddets .clientHead {
+    margin-bottom: 7px;
+}
+#coddets input {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 5px;
+    border: 1px solid green;
+    border-radius: 5px;
+}
+
+#coddets textarea {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 5px;
+    border: 1px solid green;
+    border-radius: 5px;
+}
+
+#coddets button {
+    width: 100%;
+}
+
+.card-body#myCardBody:hover {
+    cursor: pointer;
+}
+
+.contactsContainer {
+    display: table;
+    width: 100%;
+    background: url(https://images.pexels.com/photos/5490975/pexels-photo-5490975.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    background-size: cover;
+    background-position: center;
+}
+.contactsBox {
+   padding-top: 60px;
+   padding-bottom: 60px;
+   margin: 50px auto;
+   width: 90%;
+   //min-height: calc(100vh - 200px);
+   background: rgba(104, 195, 163, 0.7);
+   text-align: center;
+}
+.contactsBox a{
+    display: table;
+    color: #fff;
+    font-size: 70px;
+    font-weight: 300;
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+    //width: 100%;
+    margin: 30px auto;
+    transition: .2s;
+}
+.contactsBox a:hover{
+    color: green;
+}
