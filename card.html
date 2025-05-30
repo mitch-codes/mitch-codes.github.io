@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>card generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 90%;
+        }
+        .logo {
+            margin-bottom: 20px;
+        }
+        .logo img {
+            max-width: 250px; /* Adjust as needed */
+            height: auto;
+        }
+        .formBox {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        label {
+            font-weight: bold;
+            text-align: left;
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box; /* Ensures padding doesn't increase total width */
+        }
+        textarea {
+            resize: vertical; /* Allows vertical resizing */
+            min-height: 80px;
+        }
+        button {
+            background-color: #007bff;
+            background-color: #008000;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .footer-text {
+            margin-top: 20px;
+            color: #555;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="https://mitch-codes.github.io/images/logo1.png" alt="Your Logo"></br>
+            Enter your name, as the sender and a short message in the fields below to generate the card</br>
+            then copy the url of the page you are sent to
+        </div>
+
+        <div class="formBox">
+            <div>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name">
+            </div>
+            <div>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message"></textarea>
+            </div>
+            <button onclick="proof()">Generate</button>
+        </div>
+
+        <div class="footer-text">
+            Powered by mitch_codes
+        </div>
+    </div>
+    <script>
+        function proof(){
+            let specialName = document.getElementById("name").value;
+            let specialMessage = document.getElementById("message").value;
+            if (!specialName || !specialMessage) {
+                alert("please fill in booth fields");
+            }
+            else {
+                window.open("https://mitch-codes.github.io/valentine?from="+specialName+"&message="+specialMessage);
+            }
+        }
+    </script>
+</body>
+</html>
