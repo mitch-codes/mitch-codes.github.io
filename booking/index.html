@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clickable Calendar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for the message box */
+        .bookAppointment {
+            width: 90%;
+            text-align: center;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            background: #fff;
+            z-index: 3;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 10px;
+            max-height: 90vh;
+            overflow: auto;
+            border: 1px solid #333;
+        }
+        .bookAppointment a{
+            width: 90%;
+            padding-top: 7px;
+            padding-bottom: 7px;
+            display: table;
+            background-color: #a28345;
+            margin: 10px auto;
+            border-radius: 10px;
+            color: #fff;
+        }
+        #myCalnder {
+            margin: 10px;
+        }
+        #messageBox {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #1a202c; /* Dark background */
+            color: #fff;
+            padding: 20px 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            display: none; /* Hidden by default */
+            font-family: 'Inter', sans-serif;
+            text-align: center;
+        }
+
+        #messageBox button {
+            background-color: #4299e1; /* Blue for button */
+            color: white;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: background-color 0.2s ease-in-out;
+        }
+
+        #messageBox button:hover {
+            background-color: #3182ce;
+        }
+
+        /* Ensure calendar days are clickable and have a pointer cursor */
+        .calendar-day {
+            cursor: pointer;
+            transition: background-color 0.2s ease-in-out;
+        }
+
+        .calendar-day:hover {
+            background-color: #e2e8f0; /* Light gray on hover */
+        }
+
+        /* Style for the current day */
+        .current-day {
+            background-color: #a7f3d0; /* Light green for current day */
+            font-weight: bold;
+            border: 2px solid #10b981; /* Darker green border */
+        }
+
+        /* Style for unclickable days */
+        .unclickable-day {
+            background-color: #e0e0e0; /* Lighter gray for unclickable */
+            color: #a0a0a0; /* Faded text color */
+            cursor: not-allowed; /* Indicate it's not clickable */
+            opacity: 0.7;
+        }
+
+        .unclickable-day:hover {
+            background-color: #e0e0e0; /* No change on hover for unclickable */
+        }
+
+        #exitButton {
+            top: 5px;
+            right: 5px;
+            position: absolute;
+            z-index: 4;
+            padding: 5px 10px;
+            background:#a28345;
+            border-radius: 10px;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-white p-8 rounded-xl shadow-lg w-full max-w-md" id="myCalnder">
+        <div class="flex justify-between items-center mb-6">
+            <button id="prevMonth" class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors duration-200 focus:outline-none">Prev</button>
+            <h2 id="monthYear" class="text-2xl font-semibold text-gray-800"></h2>
+            <button id="nextMonth" class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors duration-200 focus:outline-none">Next</button>
+        </div>
+
+        <div class="grid grid-cols-7 gap-2 text-center text-sm font-medium text-gray-600 mb-4">
+            <div>Sun</div>
+            <div>Mon</div>
+            <div>Tue</div>
+            <div>Wed</div>
+            <div>Thu</div>
+            <div>Fri</div>
+            <div>Sat</div>
+        </div>
+
+        <div id="calendarDays" class="grid grid-cols-7 gap-2 text-center">
+            </div>
+    </div>
+
+    <div id="messageBox">
+        <p id="messageText" class="text-lg mb-4"></p>
+        <button id="closeMessageBox">OK</button>
+    </div>
+
+    <div class="bookAppointment" id="bookAppointment" style="display:none;">
+        Book an appointment time
+        <a href="#"> 8 am - 9 am</a>
+        <a href="#"> 9 am - 10 am</a>
+        <a href="#"> 11 am - 12 pm</a>
+        <button onlick="disableBox()" id="exitButton">x</button>
+    </div>
+
+    <script src="fetchData27.js"></script>
+    <script>
+
+    </script>
+</body>
+</html>
