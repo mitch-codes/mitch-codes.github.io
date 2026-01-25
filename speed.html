@@ -1,0 +1,161 @@
+<html>
+    <head>
+        <title>Speed Tour</title>
+        <style>
+            body {
+                padding: 0;
+                margin: 0;
+                background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url('https://i3.ytimg.com/vi/tBvT8W8LnZ0/maxresdefault.jpg');
+                background-size: cover;
+                background-position: center;
+            }
+            #map {
+                width: 100%;
+                height: 100vh;
+                opacity: 0.9;
+            }
+        </style>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+     <link rel="icon" type="img/png" href="speed.png"/>
+         <!-- Make sure you put this AFTER Leaflet's CSS -->
+ <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+    </head>
+    <body>
+        <div id="map"></div>
+        <script>
+            // Initialize the map centered on Africa
+var map = L.map('map').setView([1.0, 16.0], 3);
+
+//add tile, map imagery
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+
+// Add a marker for Lagos
+//var lagosMarker = L.marker([6.5244, 3.3792]).addTo(map);
+
+// Define the popup content (HTML)
+/**
+var popupContent = `
+    <h3>Lagos, Nigeria</h3>
+    <p>Lagos is a major African financial centre...</p>
+    <iframe width="200" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0"></iframe>
+`;
+
+lagosMarker.bindPopup(popupContent);
+**/
+
+const africanCapitals = [
+    /**{ name: "Abuja, Nigeria", coords: [9.0765, 7.3986] },
+    { name: "Addis Ababa, Ethiopia", coords: [9.0250, 38.7469] },
+    { name: "Algiers, Algeria", coords: [36.7525, 3.0420] },
+    { name: "Antananarivo, Madagascar", coords: [-18.8792, 47.5079] },
+    { name: "Asmara, Eritrea", coords: [15.3333, 38.9333] },
+    { name: "Bamako, Mali", coords: [12.6392, -8.0029] },
+    { name: "Bangui, Central African Republic", coords: [4.3947, 18.5582] },
+    { name: "Banjul, Gambia", coords: [13.4549, -16.5790] },
+    { name: "Bissau, Guinea-Bissau", coords: [11.8817, -15.6178] },
+    { name: "Brazzaville, Congo", coords: [-4.2634, 15.2832] },
+    { name: "Cairo, Egypt", coords: [30.0444, 31.2357] },
+    { name: "Conakry, Guinea", coords: [9.6412, -13.5784] },
+    { name: "Dakar, Senegal", coords: [14.7167, -17.4677] },
+    { name: "Djibouti, Djibouti", coords: [11.5721, 43.1456] },
+    { name: "Dodoma, Tanzania", coords: [-6.1731, 35.7419] },
+    { name: "Freetown, Sierra Leone", coords: [8.4844, -13.2344] },
+    { name: "Gaborone, Botswana", coords: [-24.6282, 25.9231] },
+    { name: "Harare, Zimbabwe", coords: [-17.8252, 31.0335] },
+    { name: "Juba, South Sudan", coords: [4.8517, 31.5825] },
+    { name: "Kampala, Uganda", coords: [0.3476, 32.5825] },
+    { name: "Khartoum, Sudan", coords: [15.5007, 32.5599] },
+    { name: "Kigali, Rwanda", coords: [-1.9441, 30.0619] },
+    { name: "Kinshasa, DR Congo", coords: [-4.4419, 15.2663] },
+    { name: "Libreville, Gabon", coords: [0.4162, 9.4673] },
+    { name: "Lilongwe, Malawi", coords: [-13.9626, 33.7741] },
+    { name: "Lomé, Togo", coords: [6.1375, 1.2125] },**/
+    { name: "Luanda, Angola", coords: [-8.8390, 13.2894], descript: "<h3>Luanda, Angola</h3>\
+                                                                    <p>Greeting: Olá (Portuguese) / Mwenho (Kimbundu)</p>\
+                                                                    <a href='https://www.youtube.com/watch?v=Ez2inQTE_fk' target='_blank'><img src='https://i.ytimg.com/an_webp/Ez2inQTE_fk/mqdefault_6s.webp?du=3000&sqp=CP7f0MsG&rs=AOn4CLCpi3Ndr_hr9UEmBb85P6KY4Y1fxQ' style='width: 200'></a> " },
+    { name: "Cape Town, South Africa", coords: [-33.9249, 18.4241], descript: "<h3>Cape Town, South Africa</h3>\
+                                                                    <p>Greeting: Howzit / Molo</p>\
+                                                                    <a href='https://www.youtube.com/watch?v=2yGZz3Z_p4E' target='_blank'><img src='https://i.ytimg.com/an_webp/2yGZz3Z_p4E/mqdefault_6s.webp?du=3000&sqp=CPX00MsG&rs=AOn4CLC72irxLoKLNbOYetO3l7e-PNKDKA' style='width: 200'></a> " },
+    { name: "Johannesburg, South Africa", coords: [-26.2041, 28.0473], descript: "<h3>Johannesburg, South Africa</h3>\
+                                                                    <p>Greeting: Sawubona</p>\
+                                                                    <a href='https://www.youtube.com/watch?v=FYxRnfHBzSQ' target='_blank'><img src='https://i.ytimg.com/an_webp/FYxRnfHBzSQ/mqdefault_6s.webp?du=3000&sqp=CNzu0MsG&rs=AOn4CLCiRtOeBln0nbIMuzAuy7TKkbkY7Q' style='width: 200'></a> " },
+    { name: "Mbabane, Eswatini", coords: [-26.3055, 31.1367], descript: "<h3>Mbabane, Eswatini</h3>\
+                                                                    <p>Greeting: Sawubona</p>\
+                                                                    <a href='https://www.youtube.com/watch?v=enuGFi4nABM' target='_blank'><img src='https://i.ytimg.com/an_webp/enuGFi4nABM/mqdefault_6s.webp?du=3000&sqp=CKzk0MsG&rs=AOn4CLBJHwXhbmSFNg35uxmjBOJoj8ikJg' style='width: 200'></a> " },
+    { name: "Lusaka, Zambia", coords: [-15.3875, 28.3228], descript: "<h3>Lusaka, Zambia</h3>\
+                                                                    <p>Greeting: Muli Shani</p>\
+                                                                    <a href='https://www.youtube.com/watch?v=Ux3-hEvl2m4' target='_blank'><img src='https://i.ytimg.com/an_webp/Ux3-hEvl2m4/mqdefault_6s.webp?du=3000&sqp=CPCO0csG&rs=AOn4CLC-KAa7Tjbph0RIc06POlVd3iqYaQ' style='width: 200'></a> " },
+    { name: "Maputo, Mozambique", coords: [-25.9692, 32.5732], descript: "<h3>Maputo, Mozambique</h3>\
+                                                                    <p>Greeting: Bom dia</p>\
+                                                                    <a href='https://www.youtube.com/watch?v=CkqumomD-Lw' target='_blank'><img src='https://i.ytimg.com/an_webp/CkqumomD-Lw/mqdefault_6s.webp?du=3000&sqp=CPDy0MsG&rs=AOn4CLBH00XM5tufxckn6rqycaOM3vy3dA' style='width: 200'></a> " },
+    { name: "Harare, Zimbabwe", coords: [-17.8252, 31.0530], descript: "<h3>Harare, Zimbabwe</h3>\
+                                                                    <p>Greeting: Mwauya (Shona)</p>\
+                                                                    <a href='https://www.youtube.com/watch?v=wzKNxjpcZ54' target='_blank'><img src='https://i.ytimg.com/an_webp/wzKNxjpcZ54/mqdefault_6s.webp?du=3000&sqp=CLTv0MsG&rs=AOn4CLAr-Pzi3qCGlHHSiBsGHKkNtQcz8g' style='width: 200'></a> " },
+    { name: "Gaborone, Botswana", coords: [-24.6282, 25.9231], descript: "<h3>Gaborone, Botswana</h3>\
+                                                                    <p>Greeting: Dumela</p>\
+                                                                    <a href='https://www.youtube.com/watch?v=EaejFrxXMbY' target='_blank'><img src='https://i.ytimg.com/an_webp/EaejFrxXMbY/mqdefault_6s.webp?du=3000&sqp=CKKH0csG&rs=AOn4CLBp5bxiQb5NjsJqaSgnDIwVlwWFkg' style='width: 200'></a> " },
+    { name: "Kigali, Rwanda", coords: [-1.9441, 30.0619], descript: "<h3>Kigali, Rwanda</h3>\
+                                                                    <p>Greeting: Muraho</p>\
+                                                                    <a href='https://www.youtube.com/watch?v=x2rUxwB5Hfc' target='_blank'><img src='https://i.ytimg.com/an_webp/x2rUxwB5Hfc/mqdefault_6s.webp?du=3000&sqp=CIjc0MsG&rs=AOn4CLC4dgtA7pUZme5nFhKgZ0FSmYR99g' style='width: 200'></a> " },
+    { name: "Nairobi, Kenya", coords: [-1.2921, 36.8219], descript: "<h3>Nairobi, Kenya</h3>\
+                                                                    <p>Greeting: Habari Yako / Jambo</p>\
+                                                                    <a href='https://www.youtube.com/watch?v=tBvT8W8LnZ0' target='_blank'><img src='https://i.ytimg.com/an_webp/tBvT8W8LnZ0/mqdefault_6s.webp?du=3000&sqp=COr10MsG&rs=AOn4CLAnPzKhDYK31dk32SwzhWK2f87F8g' style='width: 200'></a> " },
+    { name: "Addis Ababa, Ethiopia", coords: [9.0192, 38.7469], descript: "<h3>Addis Ababa, Ethiopia</h3>\
+                                                                    <p>Greeting: Selam</p>\
+                                                                    <a href='https://www.youtube.com/watch?v=7TdYPqwzdko' target='_blank'><img src='https://i.ytimg.com/an_webp/7TdYPqwzdko/mqdefault_6s.webp?du=3000&sqp=CNyC0csG&rs=AOn4CLDVtfC-r-cm1KcIes5yPr6vGq2OpQ' style='width: 200'></a> " },
+    { name: "Cairo, Egypt", coords: [30.0444, 31.2357], descript: "<h3>Cairo, Egypt</h3>\
+                                                                    <p>Greeting: Ahlan</p>\
+                                                                    <a href='https://www.youtube.com/watch?v=x6-vh91YnuY' target='_blank'><img src='https://i.ytimg.com/an_webp/x6-vh91YnuY/mqdefault_6s.webp?du=3000&sqp=CIjw0MsG&rs=AOn4CLB3ozB3KM_xXO7GUZTnfl2R46KPmg' style='width: 200'></a> " },
+    { name: "Algiers, Algeria", coords: [36.7525, 3.0420], descript: "<h3>Algiers, Algeria</h3>\
+                                                                    <p>Greeting: Salam</p>\
+                                                                    <a href='https://www.youtube.com/watch?v=DomN9Ru37s0' target='_blank'><img src='https://i.ytimg.com/an_webp/DomN9Ru37s0/mqdefault_6s.webp?du=3000&sqp=CI6M0csG&rs=AOn4CLBL5GwHKI79DyNtLkrmd9DiapSZrw' style='width: 200'></a> " },
+    { name: "Dakar, Senegal", coords: [14.7167, -17.4677], descript: "<h3>Dakar, Senegal</h3>\
+                                                                    <p>Greeting: Salaam Alaikum</p>\
+                                                                    <a href='https://www.youtube.com/watch?v=SNKIio-1uxE' target='_blank'><img src='https://i.ytimg.com/an_webp/SNKIio-1uxE/mqdefault_6s.webp?du=3000&sqp=CNuN0csG&rs=AOn4CLAYMJIkpRavL6-UozaMuLjaGC19Ug' style='width: 200'></a> " },
+    { name: "Lagos, Nigeria", coords: [6.5244, 3.3792], descript: "<h3>Lagos, Nigeria</h3>\
+                                                                    <p>Greeting: Bawo ni (Yoruba) / Kedu (Igbo)</p>\
+                                                                    <a href='https://www.youtube.com/watch?v=08Y8GmE3O9s' target='_blank'><img src='https://i.ytimg.com/an_webp/08Y8GmE3O9s/mqdefault_6s.webp?du=3000&sqp=CPKH0csG&rs=AOn4CLCv8fjfgMDt9NJy2zuHjnDY6hl6WA' style='width: 200'></a> " },
+    { name: "Casablanca, Morocco", coords: [34.0209, -6.8416], descript: "<h3>Casablanca, Morocco</h3>\
+                                                                    <p>Greeting: Salam</p>\
+                                                                    <a href='https://www.youtube.com/watch?v=GSDx12RcP9o' target='_blank'><img src='https://i.ytimg.com/an_webp/GSDx12RcP9o/mqdefault_6s.webp?du=3000&sqp=CNyL0csG&rs=AOn4CLAt77R5hf-Zt9Vhy6p6pPtX1y5hoA' style='width: 200'></a> " }
+    /**{ name: "Lusaka, Zambia", coords: [-15.3875, 28.3228] },
+    { name: "Malabo, Equatorial Guinea", coords: [3.7504, 8.7715] },
+    { name: "Maputo, Mozambique", coords: [-25.9692, 32.5732] },
+    { name: "Maseru, Lesotho", coords: [-29.3175, 27.4810] },
+    { name: "Mbabane, Eswatini", coords: [-26.3055, 31.1367] },
+    { name: "Mogadishu, Somalia", coords: [2.0469, 45.3182] },
+    { name: "Monrovia, Liberia", coords: [6.3156, -10.8074] },
+    { name: "Moroni, Comoros", coords: [-11.7172, 43.2473] },
+    { name: "Nairobi, Kenya", coords: [-1.2921, 36.8219] },
+    { name: "N'Djamena, Chad", coords: [12.1348, 15.0557] },
+    { name: "Niamey, Niger", coords: [13.5116, 2.1254] },
+    { name: "Nouakchott, Mauritania", coords: [18.0735, -15.9582] },
+    { name: "Ouagadougou, Burkina Faso", coords: [12.3714, -1.5197] },
+    { name: "Port Louis, Mauritius", coords: [-20.1609, 57.5012] },
+    { name: "Porto-Novo, Benin", coords: [6.4969, 2.6281] },
+    { name: "Praia, Cape Verde", coords: [14.9330, -23.5133] },
+    { name: "Pretoria, South Africa", coords: [-25.7479, 28.2293] },
+    { name: "Rabat, Morocco", coords: [34.0209, -6.8416] },
+    { name: "São Tomé, STP", coords: [0.3302, 6.7333] },
+    { name: "Tripoli, Libya", coords: [32.8872, 13.1913] },
+    { name: "Tunis, Tunisia", coords: [36.8065, 10.1815] },
+    { name: "Victoria, Seychelles", coords: [-4.6191, 55.4513] },
+    { name: "Windhoek, Namibia", coords: [-22.5609, 17.0658] },
+    { name: "Yamoussoukro, Ivory Coast", coords: [6.8276, -5.2767] },
+    { name: "Yaoundé, Cameroon", coords: [3.8480, 11.5021] }**/
+];
+
+africanCapitals.forEach(function(city) {
+    L.marker(city.coords)
+     .bindPopup(city.descript)
+     .addTo(map);
+});
+        </script>
+    </body>
+</html>
